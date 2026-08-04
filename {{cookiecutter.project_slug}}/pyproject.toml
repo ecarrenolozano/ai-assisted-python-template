@@ -1,0 +1,54 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "{{ cookiecutter.project_slug }}"
+version = "0.1.0"
+description = "{{ cookiecutter.project_description }}"
+readme = "README.md"
+requires-python = ">={{ cookiecutter.python_version }}"
+authors = [
+  { name = "{{ cookiecutter.author_name }}", email = "{{ cookiecutter.author_email }}" },
+]
+license = { text = "{{ cookiecutter.license }}" }
+dependencies = []
+
+[dependency-groups]
+dev = [
+  "coverage[toml]>=7.9",
+  "hatchling>=1.27",
+  "mypy>=1.16",
+  "pre-commit>=4.2",
+  "pytest>=8.4",
+  "pytest-cov>=6.2",
+  "ruff>=0.12",
+]
+docs = [
+  "mkdocs>=1.6",
+  "zensical>=0.0.9",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/{{ cookiecutter.package_name }}"]
+
+[tool.pytest.ini_options]
+addopts = "--cov={{ cookiecutter.package_name }} --cov-report=term-missing"
+testpaths = ["tests"]
+
+[tool.coverage.run]
+branch = true
+source = ["{{ cookiecutter.package_name }}"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py{{ cookiecutter.python_version | replace('.', '') }}"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "RUF"]
+
+[tool.mypy]
+python_version = "{{ cookiecutter.python_version }}"
+strict = true
+mypy_path = "src"

@@ -1,0 +1,3 @@
+interface:
+  display_name: "Clarify Project Request"
+  short_description: "Refine informal project requests into approved inception inputs"

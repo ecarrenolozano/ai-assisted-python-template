@@ -1,0 +1,14 @@
+{
+  "project_name": "My Python Project",
+  "project_slug": "{{ cookiecutter.project_name | lower | replace(' ', '-') | replace('_', '-') }}",
+  "package_name": "{{ cookiecutter.project_slug | replace('-', '_') }}",
+  "project_description": "A Python project developed with an AI-assisted, approval-gated SDLC workflow.",
+  "author_name": "Your Name",
+  "author_email": "name@example.org",
+  "python_version": ["3.14","3.13","3.12", "3.11", "3.10"],
+  "project_type": ["application", "library"],
+  "license": ["MIT", "BSD-3-Clause", "GPL-3.0-or-later", "No license"],
+  "documentation_tool": ["mkdocs", "zensical"],
+  "include_example_code": ["yes", "no"],
+  "initialize_git": ["yes", "no"]
+}

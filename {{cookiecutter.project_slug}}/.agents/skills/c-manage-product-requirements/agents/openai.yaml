@@ -1,0 +1,4 @@
+interface:
+  display_name: "Manage Product Requirements"
+  short_description: "Refine REQ and US in one canonical document"
+  default_prompt: "Create or refine product requirements and user stories using the canonical requirements workflow."
