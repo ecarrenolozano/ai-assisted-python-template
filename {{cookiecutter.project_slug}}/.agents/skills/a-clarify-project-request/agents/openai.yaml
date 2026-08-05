@@ -1,3 +1,3 @@
 interface:
-  display_name: "Clarify Project Request"
-  short_description: "Refine informal project requests into approved inception inputs"
+  display_name: "Project Request Clarification"
+  short_description: "Clarify informal project sources before Project Context Formation"

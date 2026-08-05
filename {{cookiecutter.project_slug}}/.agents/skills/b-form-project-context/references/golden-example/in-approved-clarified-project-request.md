@@ -104,8 +104,16 @@ None.
 
 ### Approval Rule
 
-The document can be passed to the Project Context Formation skill only when:
+The document can be passed to `b-form-project-context` only when:
 
 - `Ready` is selected.
 - The approver name, role, and date are recorded.
 - `Blocking Issues` is `None`.
+
+
+## 5. Later Stakeholder Clarification
+
+- **Date:** 2026-07-23
+- **Provided by:** Robert Bosch, Requester and Project Owner
+- **Clarification:** Future collaboration is a future design consideration. It is not included in the first-release scope, and it must not be translated into current collaboration features or a prescribed technical architecture.
+- **Classification impact:** Promote the future-collaboration statement from a derived interpretation to an `Approved decision`.

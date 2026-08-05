@@ -1,13 +1,42 @@
 # Project Context
 
-## Purpose
+- **Document state:** Closed
 
-Create a small personal task board for one user.
+## High-Level Scope
 
-## Initial product boundary
+The first release is a browser-based personal task board for one user.
 
-The user can create tasks, move them between TODO, DOING, and DONE, and recover the same board after reopening the application.
+### Included High-Level Capabilities
 
-## Exclusions
+- Create tasks.
+- Edit existing tasks.
+- Delete tasks so they no longer appear on the board.
+- Move tasks between TODO, DOING, and DONE.
+- Preserve tasks and board state between browser sessions.
+- Display basic counts for pending, current, and completed tasks.
 
-No accounts, collaboration, notifications, labels, or multiple boards.
+Excluded:
+
+- accounts;
+- collaboration;
+- notifications;
+- labels;
+- multiple boards.
+
+## Success Criteria
+
+- Create tasks.
+- Edit existing tasks.
+- Delete tasks so they no longer appear on the board.
+- Move tasks between TODO, DOING, and DONE.
+- Preserve tasks and board state between browser sessions.
+- Display basic counts for pending, current, and completed tasks.
+
+## Project Context Approval
+
+- [x] Ready for Product Requirements
+- [ ] Not Ready
+- **Reviewed by:** Product requester
+- **Role or responsibility:** Product decision-maker
+- **Date:** 2026-07-22
+- **Blocking Issues or Feedback:** None

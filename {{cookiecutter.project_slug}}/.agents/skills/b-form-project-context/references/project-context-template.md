@@ -2,33 +2,20 @@
 
 ## How to Use This Document
 
-This document turns an approved Clarified Project Request into a high-level definition of the software project.
+This document turns an approved Clarified Project Request into an evidence-grounded, high-level definition of the software project.
 
-Follow these steps:
+Rules:
 
-1. Verify that the source request is closed, approved, and has no blocking issues.
-2. Complete Section 1 and set `Document state` to `Draft` when creating the file.
-3. Populate Sections 2–17 using only confirmed information.
-4. When information is absent but does not block approval, write `Not identified in the approved source`.
-5. Do not invent facts merely to complete a section.
-6. Define the MVP boundary as the smallest useful software scope approved for the first version.
-7. Use temporary Working Questions only when missing information prevents a coherent or approvable Project Context.
-8. Ask no more than 10 questions and do not repeat questions already answered in the approved source.
-9. Integrate answers into the affected sections and remove Working Questions before approval.
-10. Set `Document state` to `Pending Approval` only when no blocking issue remains.
-11. If the reviewer selects `Not Ready`, set `Document state` to `Under Clarification`, address the feedback, and resubmit.
-12. Set `Document state` to `Closed` only after valid human approval as `Ready for User Stories`.
-
-### Editing Rules
-
-- Use short paragraphs and direct statements.
-- Use plain language that does not require knowledge of Scrum, Agile, or business terminology.
-- Do not assign titles or responsibilities that are not confirmed.
-- Do not present assumptions as facts.
-- Do not interpret missing information as confirmation that something does not exist.
-- Avoid repeating the same information across several sections unless the repetition adds a different meaning.
-- Do not include detailed requirements, user stories, architecture, implementation plans, or test plans.
-- Use version control instead of retaining obsolete approval cycles inside the document.
+1. Verify that the source request is closed, ready, fully approved, and has no blocking issues.
+2. Use only approved evidence and recorded stakeholder answers as confirmed facts.
+3. Classify substantive information as `Confirmed fact`, `Derived interpretation`, `Assumption`, `Open question`, or `Approved decision`.
+4. Record evidence for confirmed facts, derived interpretations, and approved decisions.
+5. Never silently fill a gap. Use `Not identified in the approved source` for non-blocking gaps.
+6. Ask no more than 20 distinct Working Questions across the document lifecycle.
+7. Ask questions in small rounds, normally one to four, and stop until answers are available.
+8. Remove Working Questions before approval.
+9. Do not include detailed requirements, user stories, architecture, implementation plans, repository issues, or test plans.
+10. Close the document only after valid human approval as `Ready for Product Requirements`.
 
 ---
 
@@ -45,31 +32,51 @@ Follow these steps:
 
 [Summarize the problem, intended user, expected result, first useful software version, and main confirmed limit in one concise paragraph.]
 
-## 3. Background
+## 3. Evidence and Classification Register
 
-[Describe the current situation that led to the project.]
+Record substantive statements that materially shape the Project Context.
 
-## 4. Problem Statement
+| Statement | Classification | Evidence or basis | Confirmation path if unconfirmed |
+|---|---|---|---|
+| [Statement] | Confirmed fact | [Approved source section or recorded answer] | — |
+| [Statement] | Derived interpretation | [Confirmed facts and reasoning basis] | — |
+| [Statement] | Assumption | [Why it is temporarily needed] | [Who or what must confirm it] |
+| [Statement] | Open question | [Why the information matters] | [Who should answer] |
+| [Statement] | Approved decision | [Approval evidence] | — |
+
+Classification rules:
+
+- Use `Confirmed fact` only for statements directly supported by approved evidence.
+- Use `Derived interpretation` for consequences or conclusions inferred from confirmed evidence.
+- Use `Approved decision` when a stakeholder explicitly confirms a project-level choice.
+- Split a statement when one part is confirmed and another part is inferred.
+- Use one consistent classification for the same statement throughout the document.
+
+## 4. Background
+
+[Describe the confirmed current situation that led to the project.]
+
+## 5. Problem Statement
 
 [State the observable problem without prescribing a technical solution.]
 
-## 5. Why the Project Is Needed
+## 6. Why the Project Is Needed
 
-[Explain why the project should be undertaken and why it matters now.]
+[Explain why the project should be undertaken and why it matters now, based on evidence.]
 
-## 6. Desired Future Situation
+## 7. Desired Future Situation
 
-[Describe what should be different after the project succeeds.]
+[Describe what should be different after the project succeeds. Label derived interpretations when necessary.]
 
-## 7. Project Goal
+## 8. Project Goal
 
-[State one clear result the project should achieve.]
+[State one clear, evidence-grounded result the project should achieve.]
 
-## 8. Expected Outcomes
+## 9. Expected Outcomes
 
 - [Expected high-level outcome]
 
-## 9. People Involved
+## 10. People Involved
 
 ### Intended Users
 
@@ -77,19 +84,17 @@ Follow these steps:
 
 ### Other People Affected
 
-- [Person or group, or `None identified in the approved source`]
+- [Person or group, or `Not identified in the approved source`]
 
 ### Confirmed Responsibilities
 
-Record only responsibilities confirmed by the source.
-
-- **[Name]:** [Confirmed responsibility]
+- **[Name]:** [Confirmed responsibility and evidence]
 
 If no additional responsibility is confirmed, write:
 
 - `No additional responsibilities identified in the approved source.`
 
-## 10. High-Level Scope
+## 11. High-Level Scope
 
 ### Included
 
@@ -99,9 +104,17 @@ If no additional responsibility is confirmed, write:
 
 - [Explicit exclusion]
 
-## 11. MVP Boundary
+### Future Design Considerations
 
-In this document, the MVP boundary is the smallest useful software scope approved for the first version. It does not include hypotheses, experiments, or business validation.
+Record future-facing project considerations here only when they do not add capabilities to the current release.
+
+Do not translate a future consideration into architecture or implementation requirements.
+
+- [Future design consideration, classification, and evidence]
+
+## 12. MVP Boundary
+
+The MVP boundary is the smallest useful software scope approved for the first version. It does not include hypotheses, experiments, or business validation.
 
 ### Intended User
 
@@ -109,7 +122,7 @@ In this document, the MVP boundary is the smallest useful software scope approve
 
 ### Minimum Useful Outcome
 
-[What the user must be able to achieve with the first version.]
+[What the user must be able to achieve.]
 
 ### Included High-Level Capabilities
 
@@ -125,45 +138,50 @@ In this document, the MVP boundary is the smallest useful software scope approve
 
 ### Completion Condition
 
-[An observable condition showing that the approved first-version software scope has been delivered.]
+[Observable condition showing that the approved first-version scope has been delivered.]
 
-## 12. Constraints
+## 13. Constraints
 
-A constraint is a confirmed condition the project must respect and cannot freely change.
+A constraint is a confirmed condition the project must respect.
 
 - [Confirmed constraint, or `No additional constraints identified in the approved source`]
 
-## 13. Assumptions
+## 14. Assumptions
 
-An assumption is an unconfirmed statement temporarily treated as true. Do not invent assumptions merely to fill this section.
+An assumption is unconfirmed information temporarily used to continue. Every assumption must have a confirmation path.
 
-- [Assumption, or `No assumptions recorded`]
+- **Assumption:** [Statement]
+  - **Why needed:** [Reason]
+  - **Confirmation path:** [Person or evidence required]
 
-## 14. Dependencies
+If none exist, write `No assumptions recorded`.
 
-A dependency is something outside the project that must be available or completed. Do not invent dependencies merely to fill this section.
+## 15. Dependencies
 
-- [Dependency, or `No dependencies identified in the approved source`]
+A dependency is something outside the project that must be available or completed.
 
-## 15. Risks and Uncertainties
+- [Dependency and evidence, or `No dependencies identified in the approved source`]
 
-A risk is an uncertain event that could negatively affect the project. An uncertainty is important missing knowledge.
+## 16. Risks and Uncertainties
+
+Separate supported risks from open uncertainties.
 
 - **[Risk or uncertainty]:** [Possible impact]
+  - **Classification:** Confirmed fact | Derived interpretation | Open question | Approved decision
+  - **Evidence or basis:** [Source or derivation]
+  - **Affected project area:** [Scope, schedule, responsibilities, dependency, or other area]
 
-If none are supported by the source, write:
+When a risk is derived from a confirmed constraint, classify the risk statement as `Derived interpretation`, while preserving the underlying constraint as a separate `Confirmed fact`.
 
-- `No project-level risks or uncertainties identified in the approved source.`
+If none are supported, write `No project-level risks or uncertainties identified in the approved source`.
 
-## 16. Success Criteria
+## 17. Success Criteria
 
-Use observable project-level conditions. Do not include implementation details.
+Use observable project-level conditions supported by evidence. Do not add detailed acceptance criteria.
 
 - [Observable success condition]
 
-## 17. Confirmed Decisions and Responsibilities
-
-Record only what is confirmed.
+## 18. Confirmed Decisions and Responsibilities
 
 - **Person who requested the project:** [Name or `Not identified`]
 - **Person who makes project-level decisions:** [Name or `Not assigned in the approved source`]
@@ -172,41 +190,61 @@ Record only what is confirmed.
 
 ## Working Questions — Remove Before Approval
 
-Include this temporary section only when missing information prevents a coherent or approvable Project Context.
+Include only while clarification is active. Ask the next small round and stop.
 
 ### Q1 — [Category]
 
 - **Question:** [Plain-language project-level question]
 - **Status:** Open | Answered
 - **Answered by:** [Person and role or responsibility]
+- **Evidence source:** [Chat answer, meeting note, or source file]
 - **Answer:** [Concise answer]
 - **Impact:** [What the answer confirms, changes, or excludes]
 
-## 18. Project Context Approval
+## 19. Validation Report
+
+Complete before approval. A classification conflict is a blocking validation failure.
+
+- **Approved source modified:** No | Yes — [explain]
+- **Unsupported confirmed claims:** 0 | [count and details]
+- **Derived interpretations without basis:** 0 | [count and details]
+- **Classification conflicts across sections:** 0 | [count and details]
+- **Mixed confirmed-and-derived statements:** 0 | [count and details]
+- **Stakeholder-confirmed interpretations not promoted:** 0 | [count and details]
+- **Assumptions without confirmation path:** 0 | [count and details]
+- **Open questions presented as resolved:** 0 | [count and details]
+- **Scope contradictions:** 0 | [count and details]
+- **Premature downstream detail:** 0 | [count and details]
+- **Authorized traceability fields changed:** [rows and fields, or `None`]
+- **Unauthorized traceability changes detected:** 0 | [count and details]
+- **Traceability Mutation Guard:** Passed | Failed — [details]
+- **Working Questions remaining:** 0 | [count]
+- **Blocking validation failures:** None | [details]
+
+## 20. Project Context Approval
 
 ### Status
 
-- [ ] Ready for User Stories
+- [ ] Ready for Product Requirements
 - [ ] Not Ready
 
 ### Reviewed by
 
 - **Name:** [Reviewer name]
-- **Role or responsibility:** [How this person is authorized to approve]
+- **Role or responsibility:** [How this person is authorized]
 - **Date:** [YYYY-MM-DD]
 
 ### Blocking Issues or Feedback
 
-[List issues that prevent approval or feedback that must be addressed.]
-
-Write `None` only when `Ready for User Stories` is selected.
+[List issues or feedback. Write `None` only when `Ready for Product Requirements` is selected.]
 
 ### Approval Rule
 
-The document can be closed and passed to user-story definition only when:
+The document can be closed and passed to `c-manage-product-requirements` only when:
 
-- `Ready for User Stories` is selected.
-- The reviewer name, responsibility, and date are recorded.
+- Exactly one decision is selected.
+- `Ready for Product Requirements` is selected.
+- Reviewer name, role or responsibility, and date are recorded.
 - `Blocking Issues or Feedback` is `None`.
 
-When `Not Ready` is selected, set `Document state` to `Under Clarification`, address the feedback, clear the current approval fields before resubmission, and keep the document open.
+When `Not Ready` is selected, return the document to `Under Clarification`, address the feedback, clear the current approval fields before resubmission, and preserve the prior decision in version control.

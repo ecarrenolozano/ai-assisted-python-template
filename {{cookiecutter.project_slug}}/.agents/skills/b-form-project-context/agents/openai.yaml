@@ -1,3 +1,3 @@
 interface:
-  display_name: "Form Project Context"
-  short_description: "Turn an approved request into a clear project context"
+  display_name: "Project Context Formation"
+  short_description: "Form an evidence-grounded project context from an approved request"

@@ -1,4 +1,0 @@
-interface:
-  display_name: "Repository Requirements Sync"
-  short_description: "Sync refined requirements and triaged issues without duplication"
-  default_prompt: "Synchronize product requirements with triaged repository issues and update trace_workflow.md."
