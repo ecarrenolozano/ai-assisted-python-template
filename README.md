@@ -1,8 +1,8 @@
 <img src="assets/branding/logo-horizontal-1600x400.png" alt="AI SDLC Python Template logo" width="1100" />
 
-# ai-sdlc-python-template
+# AI SDLC - Python template
 
-A Cookiecutter template for Python applications and libraries built with a controlled, approval-gated, AI-assisted SDLC workflow.
+A Cookiecutter template for Python applications and libraries built with a controlled, approval-gated, AI-assisted Software Development Life Cycle workflow.
 
 ## Why this template
 
@@ -92,3 +92,13 @@ The skill chain in `.agents/skills/` drives stage transitions from inception thr
 ## Template scope
 
 This template provides reusable process and infrastructure. Project-specific requirements, architecture, code, datasets, and exercises are added after generation.
+
+
+---
+
+#### Authors
+
+|                    |                                                            |                     |
+|--------------------|------------------------------------------------------------|---------------------|
+| Edwin Carreño      | [Scientific Software Center](https://www.ssc.uni-heidelberg.de/en)                  | Heidelberg, Germany |
+| Maxim Scheremetjew | [Max Plank Institute of Molecular Cell Biology and Genetics](https://www.mpi-cbg.de/) | Dresden, Germany    |
