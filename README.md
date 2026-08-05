@@ -1,8 +1,8 @@
+<img src="assets/branding/logo-horizontal-1600x400.png" alt="AI SDLC Python Template logo" width="1100" />
+
 # ai-sdlc-python-template
 
 A Cookiecutter template for Python applications and libraries built with a controlled, approval-gated, AI-assisted SDLC workflow.
-
-<img src="assets/branding/logo-horizontal-1600x400.png" alt="AI SDLC Python Template logo" width="1100" />
 
 ## Why this template
 
@@ -33,16 +33,8 @@ python -m pip install cookiecutter
 
 ### 2) Generate a project
 
-Local path:
-
 ```bash
-cookiecutter /path/to/ai-sdlc-python-template
-```
-
-Git URL:
-
-```bash
-cookiecutter https://github.com/<org>/ai-sdlc-python-template.git
+cookiecutter https://github.com/ecarrenolozano/ai-assisted-python-template.git
 ```
 
 ### 3) Run initial checks
@@ -54,34 +46,19 @@ uv run pre-commit install
 uv run pytest
 ```
 
-![Cookiecutter quickstart](assets/readme/cookiecutter-quickstart.png)
-
 ## Cookiecutter basics for first-time users
 
-Cookiecutter asks for values from `cookiecutter.json` and generates a new repository using those answers.
+Cookiecutter asks for prompt values and generates a new repository from this template.
 
-Useful commands:
-
-Use defaults without prompts:
+Run with prompts:
 
 ```bash
-cookiecutter /path/to/ai-sdlc-python-template --no-input
+cookiecutter https://github.com/ecarrenolozano/ai-assisted-python-template.git
 ```
-
-Pass values directly:
-
-```bash
-cookiecutter /path/to/ai-sdlc-python-template \
-  --no-input \
-  project_name="My Service" \
-  project_slug="my-service" \
-  python_version="3.12"
-```
-
-Replay previous answers:
+Reuse previous answers:
 
 ```bash
-cookiecutter /path/to/ai-sdlc-python-template --replay
+cookiecutter https://github.com/ecarrenolozano/ai-assisted-python-template.git --replay
 ```
 
 ## What you get
