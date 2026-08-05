@@ -16,11 +16,13 @@ dependencies = []
 
 [dependency-groups]
 dev = [
+  "bump-my-version>=0.28",
   "coverage[toml]>=7.9",
   "hatchling>=1.27",
   "mypy>=1.16",
   "pre-commit>=4.2",
   "pytest>=8.4",
+  "pytest-bdd>=7.3",
   "pytest-cov>=6.2",
   "ruff>=0.12",
 ]
@@ -35,6 +37,7 @@ packages = ["src/{{ cookiecutter.package_name }}"]
 [tool.pytest.ini_options]
 addopts = "--cov={{ cookiecutter.package_name }} --cov-report=term-missing"
 testpaths = ["tests"]
+bdd_features_base_dir = "tests/validation/features"
 
 [tool.coverage.run]
 branch = true
@@ -52,3 +55,14 @@ select = ["E", "F", "I", "B", "UP", "RUF"]
 python_version = "{{ cookiecutter.python_version }}"
 strict = true
 mypy_path = "src"
+
+[tool.bumpversion]
+current_version = "0.1.0"
+allow_dirty = false
+commit = false
+tag = false
+
+[[tool.bumpversion.files]]
+filename = "pyproject.toml"
+search = "version = \"{current_version}\""
+replace = "version = \"{new_version}\""

@@ -6,7 +6,13 @@
 
 This repository follows an AI-assisted, documentation-driven software development lifecycle. AI may support analysis, planning, implementation, testing, and documentation, but designated artifacts require human approval before work proceeds to the next stage.
 
-Start with [`sdlc_docs/00_project_context/project_context.md`](sdlc_docs/00_project_context/project_context.md) and consult [`WORKFLOW.md`](WORKFLOW.md) for the complete sequence.
+Start with:
+
+1. `sdlc_docs/trace_workflow.md` to see workflow status and next action.
+2. `sdlc_docs/00_inception/sources/` to store original project request evidence.
+3. `sdlc_docs/00_inception/project_context.md` after request clarification and approval.
+
+Consult `WORKFLOW.md` for the complete staged sequence and skill ownership.
 
 ## Setup
 
