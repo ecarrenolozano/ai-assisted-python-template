@@ -65,11 +65,23 @@ cookiecutter https://github.com/ecarrenolozano/ai-assisted-python-template.git -
 
 - `src/` package layout with Hatchling;
 - `uv`, pytest, pytest-bdd, Ruff, mypy, coverage, and pre-commit configuration;
-- reusable AI skills under `.agents/skills/`;
+- reusable Agent Skills under a provider-aware skills folder;
 - staged SDLC documentation under `sdlc_docs/`;
 - workflow traceability and approval-gated transitions;
 - documentation placeholders for MkDocs or Zensical;
 - issue and change-request templates.
+
+The `agent_provider` prompt controls where the generated skills are stored:
+
+| Choice | Skills path |
+|--------|-------------|
+| `portable` | `.agents/skills` |
+| `claude` | `.claude/skills` |
+| `codex` | `.codex/skills` |
+| `copilot` | `.agents/skills` |
+| `gemini` | `.gemini/skills` |
+| `cursor` | `.cursor/skills` |
+| `other` | `.agents/skills` |
 
 ![Generated project map](assets/readme/template-workflow-map.png)
 
@@ -81,7 +93,7 @@ Start here after generation:
 2. `sdlc_docs/00_inception/sources/`
 3. `WORKFLOW.md`
 
-The skill chain in `.agents/skills/` drives stage transitions from inception through release preparation.
+The generated Agent Skills folder drives stage transitions from inception through release preparation.
 
 ## Troubleshooting
 

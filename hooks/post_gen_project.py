@@ -7,6 +7,15 @@ license_choice = "{{ cookiecutter.license }}"
 project_type = "{{ cookiecutter.project_type }}"
 include_example = "{{ cookiecutter.include_example_code }}"
 initialize_git = "{{ cookiecutter.initialize_git }}"
+agent_provider = "{{ cookiecutter.agent_provider }}"
+
+agent_skills_paths = {
+    "claude": ".claude/skills",
+    "codex": ".codex/skills",
+    "gemini": ".gemini/skills",
+    "cursor": ".cursor/skills",
+}
+agent_skills_path = agent_skills_paths.get(agent_provider, ".agents/skills")
 
 license_files = {
     "MIT": "LICENSE-MIT",
@@ -33,6 +42,25 @@ if include_example == "no":
     for filename in ["cli_application.py", "cli_library.py"]:
         (root / "src" / "{{ cookiecutter.package_name }}" / filename).unlink(missing_ok=True)
     (root / "tests" / "test_example.py").unlink(missing_ok=True)
+
+default_skills_dir = root / ".agents" / "skills"
+target_skills_dir = root / agent_skills_path
+if target_skills_dir != default_skills_dir and default_skills_dir.exists():
+    target_skills_dir.parent.mkdir(parents=True, exist_ok=True)
+    default_skills_dir.rename(target_skills_dir)
+    default_skills_dir.parent.rmdir()
+
+for path in root.rglob("*"):
+    if not path.is_file() or path.suffix in {".pyc", ".png"}:
+        continue
+    try:
+        text = path.read_text()
+    except UnicodeDecodeError:
+        continue
+    updated = text.replace("__AGENT_SKILLS_PATH__", agent_skills_path)
+    updated = updated.replace(".agents/skills", agent_skills_path)
+    if updated != text:
+        path.write_text(updated)
 
 if initialize_git == "yes":
     try:

@@ -15,6 +15,8 @@ Use `sdlc_docs/trace_workflow.md` as the single source of truth for stage status
 
 ## Skill Sequence
 
+Bundled Agent Skills are stored in `__AGENT_SKILLS_PATH__/`.
+
 The workflow progresses through these skills in order:
 
 1. `a-clarify-project-request`
