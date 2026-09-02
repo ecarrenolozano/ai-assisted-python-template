@@ -13,13 +13,52 @@ Start with:
 3. `sdlc_docs/00_inception/project_context.md` after request clarification and approval.
 
 Consult `WORKFLOW.md` for the complete staged sequence and skill ownership.
-The bundled Agent Skills are stored in `__AGENT_SKILLS_PATH__/`.
+
+The AI SDLC Agent Skills are installed under:
+
+```text
+.agents/skills/
+```
+
+They are maintained separately in:
+
+```text
+https://github.com/ecarrenolozano/ai-sdlc-skills
+```
+
+## Requirements
+
+This project uses the `skills` CLI through `npx` to manage Agent Skills.
+
+Verify that Node.js/npm is installed:
+
+```bash
+npx --version
+```
+
+If `npx` is not available, install Node.js/npm before updating the skills.
 
 ## Setup
 
 ```bash
 uv sync --all-groups
 uv run pre-commit install
+```
+
+## Updating Agent Skills
+
+To update the AI SDLC workflow skills, run from the project root:
+
+```bash
+npx skills update
+```
+
+You do not need to regenerate this project when the central skills repository changes.
+
+To inspect the installed skills:
+
+```bash
+ls .agents/skills
 ```
 
 ## Quality checks
@@ -41,6 +80,6 @@ uv run {{ cookiecutter.documentation_tool }} serve
 
 - **Type:** {{ cookiecutter.project_type }}
 - **Python:** {{ cookiecutter.python_version }}+
-- **Agent skills path:** __AGENT_SKILLS_PATH__
+- **Agent skills:** `.agents/skills/`
 - **Author:** {{ cookiecutter.author_name }} <{{ cookiecutter.author_email }}>
 - **License:** {{ cookiecutter.license }}
