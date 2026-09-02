@@ -41,7 +41,6 @@ uv run {{ cookiecutter.documentation_tool }} serve
 
 - **Type:** {{ cookiecutter.project_type }}
 - **Python:** {{ cookiecutter.python_version }}+
-- **Agent provider:** {{ cookiecutter.agent_provider }}
 - **Agent skills path:** __AGENT_SKILLS_PATH__
 - **Author:** {{ cookiecutter.author_name }} <{{ cookiecutter.author_email }}>
 - **License:** {{ cookiecutter.license }}
