@@ -9,7 +9,5 @@
   "project_type": ["application", "library"],
   "license": ["MIT", "BSD-3-Clause", "GPL-3.0-or-later", "No license"],
   "documentation_tool": ["mkdocs", "zensical"],
-  "agent_provider": ["portable", "claude", "codex", "copilot", "gemini", "cursor", "other"],
-  "include_example_code": ["yes", "no"],
   "initialize_git": ["yes", "no"]
 }
