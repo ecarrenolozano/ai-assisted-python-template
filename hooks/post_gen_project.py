@@ -43,12 +43,32 @@ if include_example == "no":
         (root / "src" / "{{ cookiecutter.package_name }}" / filename).unlink(missing_ok=True)
     (root / "tests" / "test_example.py").unlink(missing_ok=True)
 
-default_skills_dir = root / ".agents" / "skills"
-target_skills_dir = root / agent_skills_path
-if target_skills_dir != default_skills_dir and default_skills_dir.exists():
-    target_skills_dir.parent.mkdir(parents=True, exist_ok=True)
-    default_skills_dir.rename(target_skills_dir)
-    default_skills_dir.parent.rmdir()
+# default_skills_dir = root / ".agents" / "skills"
+# target_skills_dir = root / agent_skills_path
+# if target_skills_dir != default_skills_dir and default_skills_dir.exists():
+#     target_skills_dir.parent.mkdir(parents=True, exist_ok=True)
+#     default_skills_dir.rename(target_skills_dir)
+#     default_skills_dir.parent.rmdir()
+
+try:
+    subprocess.run(
+        [
+            "npx",
+            "--yes",
+            "skills",
+            "add",
+            "ecarrenolozano/ai-sdlc-skills",
+        ],
+        cwd=root,
+        check=True,
+    )
+except FileNotFoundError:
+    raise RuntimeError(
+        "Node.js/npm is required to install the AI SDLC skills. "
+        "Install Node.js and run the Cookiecutter template again."
+    )
+except subprocess.CalledProcessError as exc:
+    raise RuntimeError("Failed to install AI SDLC skills.") from exc
 
 for path in root.rglob("*"):
     if not path.is_file() or path.suffix in {".pyc", ".png"}:

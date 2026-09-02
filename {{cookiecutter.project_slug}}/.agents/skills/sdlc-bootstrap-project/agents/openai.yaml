@@ -1,3 +1,0 @@
-interface:
-  display_name: "SDLC Project Bootstrap"
-  short_description: "Initialize the controlled SDLC workspace without inventing project decisions."
