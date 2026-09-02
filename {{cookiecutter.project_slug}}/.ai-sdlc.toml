@@ -1,4 +1,0 @@
-[skills]
-repository = "https://github.com/ecarrenolozano/ai-sdlc-skills"
-version = "v1.0.0"
-path = ".agents/skills"
